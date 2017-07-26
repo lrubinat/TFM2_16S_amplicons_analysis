@@ -1,5 +1,7 @@
 libraries	library
 load_data	[<-	c	dim	is.na	read.table	row.names<-	setwd	st068a_MD1254	st071a_MD1318	subset
+summary	colSums	summary	tb16_tax_occur
+samples_selection	<	==	>=	amplicons_per_sample_tb16	c	colSums	dim	rowSums	sort	st004_MD60	st007_MD98	st013_MD202	st029_MD506	st030_MD528	st037_MD646	st046_MD834	st051_MD916	st053_MD962	st054_MD985	st056_MD1035	st063_MD1176	st064_MD1186	st067_MD1246	st083_MD1517	subset	tb16_tax_occur	which
 starting_dataset	dim	tb16_tax_occur_min16509
 reads_per_sample_overview1	colSums	min	tb16_tax_occur_min16509
 reads_per_sample_overview2	colSums	max	tb16_tax_occur_min16509
@@ -31,12 +33,9 @@ monoNMDS	monoMDS	plot	tb16_tax_occur_ss16509_no_cero.bray
 metaNMDS	metaMDS	plot	tb16_tax_occur_ss16509_no_cero.bray
 load_geo_data	$	:=	T	as.matrix	create.lats	data.table	dim	earth.dist	head	mixedorder	order	paste	read.table	row.names	row.names<-	st_name
 working_datasets1	as.matrix	dim	geo_distances_MP_18S	tb16_tax_occur_ss16509_no_cero
-working_datasets2	as.matrix	dim
-working_datasets3	dim	geo_distances_MP_18S
 working_datasets4	geo_distances_MP_18S	plot	tb16_tax_occur_ss16509_no_cero.bray
 mantel_correlogram1	geo_distances_MP_18S	mantel	tb16_tax_occur_ss16509_no_cero.bray
 mantel_correlogram2	geo_distances_MP_18S	max	min
-mantel_correlogram3	geo_distances_MP_18S	min
 mantel_correlogram4	geo_distances_MP_18S	mantel.correlog	plot	seq	tb16_tax_occur_ss16509_no_cero.bray
 OTUs_mean_relative_abund	as.data.frame	colSums	head	rowMeans	t	tb16_tax_occur_ss16509_no_cero
 OTUs_occurence	>	[<-	as.data.frame	rowSums	str	tb16_tax_occur_ss16509_no_cero_t.rabund
@@ -47,8 +46,6 @@ abundant_OTUs2	nrow	otu_tb16_ss16509_rabund_percoccur	tb16_ss16509_abundant_sort
 select_cosmopolitan	$	>	T	c	cbind	merge	order	otu_tb16_ss16509_rabund_percoccur	row.names	tb16_class_prov
 percentage_cosmopolitan	nrow	otu_tb16_ss16509_cosmop_sorted	otu_tb16_ss16509_rabund_percoccur
 rare_OTUs	$	&	<	>	nrow	otu_tb16_ss16509_rabund_percoccur
-summary	colSums	summary	tb16_tax_occur
-samples_selection	<	==	>=	amplicons_per_sample_tb16	c	colSums	dim	rowSums	sort	st004_MD60	st007_MD98	st013_MD202	st029_MD506	st030_MD528	st037_MD646	st046_MD834	st051_MD916	st053_MD962	st054_MD985	st056_MD1035	st063_MD1176	st064_MD1186	st067_MD1246	st083_MD1517	subset	tb16_tax_occur	which
 merge_tables_16S	$	$<-	T	[<-	as.character	as.numeric	dim	merge	order	rownames	rownames<-	sapply	strsplit	t	tb16_class	tb16_tax_occur_ss16509_no_cero
 dim_merge1_16S	colSums	nrow	sum	tb16_ss16509_tax_sorted
 dim_merge2_16S	!=	$	colSums	nrow	sum	tb16_ss16509_tax_sorted	which
