@@ -16,11 +16,11 @@ dataset_summary	dim	tb16_tax	tb16_tax_occur	tb16_tax_occur_min16509	tb16_tax_occ
 shannon_index1	diversity	tb16_tax_occur_ss16509_no_cero
 shannon_index2	boxplot	plot	sort	tb16_tax_occur_ss16509_div
 richness_otu_no1	specnumber	tb16_tax_occur_ss16509_no_cero
-richness_otu_no2	OTUs_per_sample_18S_tax_occur_ss16509	min
-richness_otu_no3	OTUs_per_sample_18S_tax_occur_ss16509	max
-richness_otu_no4	OTUs_per_sample_18S_tax_occur_ss16509	boxplot	plot	sort
-pielou_index_of_evenness1	OTUs_per_sample_18S_tax_occur_ss16509	log	tb16_tax_occur_ss16509_div
-pielou_index_of_evenness2	boxplot	pielou_evenness_18S_tax_occur_ss16509	plot	sort
+richness_otu_no2	OTUs_per_sample_16S_tax_occur_ss16509	min
+richness_otu_no3	OTUs_per_sample_16S_tax_occur_ss16509	max
+richness_otu_no4	OTUs_per_sample_16S_tax_occur_ss16509	boxplot	plot	sort
+pielou_index_of_evenness1	OTUs_per_sample_16S_tax_occur_ss16509	log	tb16_tax_occur_ss16509_div
+pielou_index_of_evenness2	boxplot	pielou_evenness_16S_tax_occur_ss16509	plot	sort
 OTUs_overall_abundance	T	colSums	head	sort	tb16_tax_occur_ss16509_no_cero
 OTUs_overall_abundance2	:=	T	V1	aes	as.data.table	geom_point	ggplot	labs	nrow	order	rank	rowSums	scale_y_log10	t	tb16_tax_occur_ss16509_no_cero	theme_bw
 radfit	colSums	plot	radfit	tb16_tax_occur_min16509_t
@@ -100,3 +100,11 @@ create_table_merging_#OTUs_#reads_#samples_16S_protists_non.raref	$	T	c	class_su
 OTUs_vs_reads_relative_values_16S_non.raref	$	$<-	colSums	tb16S_OTUs_reads_samples
 OTUs_vs_reads_16S_v2_non.raref	OTUs_per_class	aes	c	element_text	geom_point	geom_text_repel	ggplot	labs	reads_per_class	rownames	scale_x_log10	scale_y_log10	tb16S_OTUs_reads_samples	tb16S_OTUs_reads_samples_rel_abund	theme	unit
 reads_vs_samples_16S_non.raref	aes	c	element_text	geom_point	geom_text_repel	ggplot	labs	reads_per_class	rownames	samples_per_class	scale_x_continuous	scale_y_log10	tb16S_OTUs_reads_samples	tb16S_OTUs_reads_samples_rel_abund	theme	unit
+dim_merge2_v2	!=	$	nrow	tb16_ss16509_tax_sorted	which
+dim_merge2.2_v2	colSums	sum	tb16_phototrophs	tb16_ss16509_tax_sorted
+dim_merge3_v2	$	==	nrow	tb16_ss16509_tax_sorted	which
+dim_merge3.2_v2	colSums	sum	tb16_non.phototrophs	tb16_ss16509_tax_sorted
+dim_merge2_non.raref	!=	$	nrow	tb16_min16509_tax_sorted	which
+dim_merge2.2_non.raref	colSums	sum	tb16_min16509_tax_sorted	tb16_phototrophs
+dim_merge3_non.raref	$	==	nrow	tb16_min16509_tax_sorted	which
+dim_merge3.2_non.raref	colSums	sum	tb16_min16509_tax_sorted	tb16_non.phototrophs

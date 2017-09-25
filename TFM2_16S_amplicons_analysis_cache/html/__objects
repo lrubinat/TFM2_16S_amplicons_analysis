@@ -15,11 +15,11 @@ species_richness_rarefaction5	tb16_tax_occur_ss16509_no_cero
 dataset_summary	
 shannon_index1	tb16_tax_occur_ss16509_div
 shannon_index2	
-richness_otu_no1	OTUs_per_sample_18S_tax_occur_ss16509
+richness_otu_no1	OTUs_per_sample_16S_tax_occur_ss16509
 richness_otu_no2	
 richness_otu_no3	
 richness_otu_no4	
-pielou_index_of_evenness1	pielou_evenness_18S_tax_occur_ss16509
+pielou_index_of_evenness1	pielou_evenness_16S_tax_occur_ss16509
 pielou_index_of_evenness2	
 OTUs_overall_abundance	
 OTUs_overall_abundance2	p1	tb16_tax_occur_ss16509_no_cero_rank
@@ -100,3 +100,11 @@ create_table_merging_#OTUs_#reads_#samples_16S_protists_non.raref	tb16S_OTUs_rea
 OTUs_vs_reads_relative_values_16S_non.raref	tb16S_OTUs_reads_samples_rel_abund
 OTUs_vs_reads_16S_v2_non.raref	
 reads_vs_samples_16S_non.raref	
+dim_merge2_v2	tb16_phototrophs
+dim_merge2.2_v2	
+dim_merge3_v2	tb16_non.phototrophs
+dim_merge3.2_v2	
+dim_merge2_non.raref	tb16_phototrophs
+dim_merge2.2_non.raref	
+dim_merge3_non.raref	tb16_non.phototrophs
+dim_merge3.2_non.raref	
